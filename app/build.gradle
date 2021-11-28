@@ -83,6 +83,9 @@ dependencies {
     //Paging
     implementation "androidx.paging:paging-runtime-ktx:3.1.0"
 
+    //Mock Server
+    implementation "com.squareup.okhttp3:mockwebserver:4.9.2"
+
     //Unit Test
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0'
@@ -125,4 +128,5 @@ dependencies {
 def getInstrumentationTestRunner() {
     project.hasProperty('cucumber') ?
             'test.com.sampleapp.mor.test.Cucumber365AndroidJUnitRunner' :
-            'androidx.test.runner.AndroidJUnitRunner' }
+            'androidx.test.runner.AndroidJUnitRunner'
+}
