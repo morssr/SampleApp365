@@ -6,6 +6,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import test.com.sampleapp.mor.data.PropertiesRepository
+import test.com.sampleapp.mor.data.Repository
+import test.com.sampleapp.mor.data.api.PropertiesService
 import test.com.sampleapp.mor.data.cache.AppDatabase
 import test.com.sampleapp.mor.data.cache.PropertiesDao
 import test.com.sampleapp.mor.data.cache.TenantsDao
@@ -33,6 +36,14 @@ object DatabaseModule {
     @Provides
     fun trendingTenantsDao(database: AppDatabase): TenantsDao {
         return database.tenantsDao()
+    }
+
+    @Provides
+    fun provideRepository(
+        database: AppDatabase,
+        propertiesService: PropertiesService
+    ): PropertiesRepository {
+        return Repository(propertiesService, database)
     }
 
     @Provides
