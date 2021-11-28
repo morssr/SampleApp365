@@ -80,6 +80,8 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
     implementation 'com.google.code.gson:gson:2.8.6'
 
+    //Paging
+    implementation "androidx.paging:paging-runtime-ktx:3.1.0"
 
     //Unit Test
     testImplementation 'junit:junit:4.13.2'
