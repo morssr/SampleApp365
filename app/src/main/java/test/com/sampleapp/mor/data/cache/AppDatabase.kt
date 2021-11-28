@@ -9,12 +9,14 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import test.com.sampleapp.mor.data.cache.entities.Property
 import test.com.sampleapp.mor.data.cache.entities.Tenant
+import test.com.sampleapp.mor.data.cache.paging.RemoteKeys
+import test.com.sampleapp.mor.data.cache.paging.RemoteKeysDao
 import test.com.sampleapp.mor.data.cache.utilities.converters.DateTypeConverter
 import test.com.sampleapp.mor.data.cache.utilities.converters.EntitiesConverters
 
 @TypeConverters(DateTypeConverter::class, EntitiesConverters::class)
 @Database(
-    entities = [Property::class, Tenant::class],
+    entities = [Property::class, Tenant::class, RemoteKeys::class],
     version = 1,
     exportSchema = false
 )
@@ -22,6 +24,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     abstract fun propertiesDao(): PropertiesDao
     abstract fun tenantsDao(): TenantsDao
+    abstract fun remoteKeysDao(): RemoteKeysDao
 
     companion object {
         private const val TAG = "AppDatabase"

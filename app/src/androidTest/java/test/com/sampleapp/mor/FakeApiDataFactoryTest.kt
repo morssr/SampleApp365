@@ -28,7 +28,7 @@ class FakeApiDataFactoryTest {
     @Test
     fun getPropertiesList_CheckIfListContainsAtLeastTwoElements() {
         val propertiesListSize =
-            FakeApiDataFactory.getPropertiesList(context, FakeApiDataFactory.propertiesJsonMap, 2)
+            FakeApiDataFactory.getPropertiesList(context, FakeApiDataFactory.propertiesJsonFileNameMap, 2)
         assertThat(propertiesListSize, `is`(not(empty())))
     }
 }

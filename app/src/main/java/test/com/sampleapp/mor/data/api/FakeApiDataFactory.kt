@@ -3,20 +3,36 @@ package test.com.sampleapp.mor.data.api
 import android.content.Context
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import retrofit2.Response
 import test.com.sampleapp.mor.data.api.resposes.PropertiesResponse
 import test.com.sampleapp.mor.data.api.resposes.PropertyResponse
 import test.com.sampleapp.mor.data.api.utils.NullToEmptyStringAdapter
 import test.com.sampleapp.mor.data.api.utils.mapToPropertiesAndTenants
 import test.com.sampleapp.mor.utilities.readAssetsFile
 
-object FakeApiDataFactory {
+object FakeApiDataFactory : PropertiesService {
 
     const val propertiesPage1FileName = "properties.json"
     const val propertiesPage2FileName = "properties2.json"
 
-    val propertiesJsonMap = hashMapOf<Int, String>().also {
+    val propertiesJsonFileNameMap = hashMapOf<Int, String>().also {
         it[1] = propertiesPage1FileName
         it[2] = propertiesPage2FileName
+    }
+
+    var propertiesJsonFilesMap: HashMap<Int, String>? = null
+        private set
+        get() {
+            if (field == null) throw UninitializedPropertyAccessException("call initFakeApi() first.")
+            return field
+        }
+
+    @JvmStatic
+    fun initFakeApi(context: Context) {
+        propertiesJsonFilesMap = hashMapOf<Int, String>().also {
+            it[1] = getPropertiesJsonFile(context, propertiesPage1FileName)
+            it[2] = getPropertiesJsonFile(context, propertiesPage2FileName)
+        }
     }
 
     fun getPropertiesJsonFile(context: Context, fileName: String) =
@@ -24,7 +40,7 @@ object FakeApiDataFactory {
 
     fun getPropertiesList(
         context: Context,
-        files: HashMap<Int, String> = propertiesJsonMap,
+        files: HashMap<Int, String> = propertiesJsonFileNameMap,
         page: Int
     ): List<PropertyResponse>? {
         val jsonConverter = buildMoshiConverter()
@@ -50,5 +66,8 @@ object FakeApiDataFactory {
         .add(KotlinJsonAdapterFactory())
         .build().adapter(PropertiesResponse::class.java)
 
+    override suspend fun getProperties(page: Int): Response<PropertiesResponse> =
+        Response.success(buildMoshiConverter().fromJson(propertiesJsonFilesMap!![page])
+    )
 }
 

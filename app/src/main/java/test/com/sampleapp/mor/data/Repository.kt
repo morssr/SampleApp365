@@ -1,9 +1,15 @@
 package test.com.sampleapp.mor.data
 
+
+import androidx.paging.ExperimentalPagingApi
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import androidx.sqlite.db.SimpleSQLiteQuery
 import kotlinx.coroutines.flow.Flow
 import test.com.sampleapp.mor.data.api.PropertiesService
 import test.com.sampleapp.mor.data.cache.AppDatabase
+import test.com.sampleapp.mor.data.cache.paging.PropertiesRemoteMediator
 import test.com.sampleapp.mor.data.cache.relations.PropertyAndTenant
 import test.com.sampleapp.mor.data.cache.utilities.converters.QueryHelper
 import test.com.sampleapp.mor.ui.PropertyStatusFilter
@@ -35,9 +41,29 @@ class Repository @Inject constructor(
         )
     )
 
+    override suspend fun getAllPropertiesApi(page: Int) = propertiesService.getProperties(page)
+
+    override fun getPropertiesByStatusPaging(
+        propertyStatusFilter: PropertyStatusFilter,
+        tenantStatusFilter: TenantStatusFilter
+    ): Flow<PagingData<PropertyAndTenant>> {
+
+        val filterQuery =
+            QueryHelper.buildPropertiesByStatusQuery(propertyStatusFilter, tenantStatusFilter)
+
+        val pagingSourceFactory = {
+            appDatabase.propertiesDao().getPropertiesRawQueryPaging(SimpleSQLiteQuery(filterQuery))
+        }
+
+        @OptIn(ExperimentalPagingApi::class)
+        return Pager(
+            config = PagingConfig(pageSize = 37, enablePlaceholders = false),
+            remoteMediator = PropertiesRemoteMediator(propertiesService, appDatabase),
+            pagingSourceFactory = pagingSourceFactory
+        ).flow
+    }
+
     override suspend fun insertPropertiesAndTenant(properties: List<PropertyAndTenant>) {
         appDatabase.propertiesDao().insertAllPropertiesAndTenants(properties)
     }
-
-    override suspend fun getAllPropertiesApi(page: Int) = propertiesService.getPopularMovies(page)
 }

@@ -9,7 +9,7 @@ import test.com.sampleapp.mor.data.api.utils.PROPERTIES_REQUEST_BASE_URL
 interface PropertiesService {
 
     @GET(PROPERTIES_REQUEST_BASE_URL)
-    suspend fun getPopularMovies(
-        @Query("page") page: Int
+    suspend fun getProperties(
+        @Query("page") page: Int = 1
     ): Response<PropertiesResponse>
 }

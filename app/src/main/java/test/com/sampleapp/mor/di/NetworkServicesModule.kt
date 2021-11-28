@@ -5,6 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import test.com.sampleapp.mor.data.api.FakeApiDataFactory
 import test.com.sampleapp.mor.data.api.PropertiesService
 import test.com.sampleapp.mor.utilities.server.MockWebServer
 import javax.inject.Qualifier

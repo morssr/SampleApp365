@@ -1,5 +1,6 @@
 package test.com.sampleapp.mor.data.cache
 
+import androidx.paging.PagingSource
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteQuery
 import kotlinx.coroutines.flow.Flow
@@ -26,6 +27,10 @@ interface PropertiesDao {
     @Transaction
     @RawQuery(observedEntities = [Property::class, Tenant::class])
     fun getPropertiesRawQueryFlow(query: SupportSQLiteQuery): Flow<List<PropertyAndTenant>>
+
+   @Transaction
+    @RawQuery(observedEntities = [Property::class, Tenant::class])
+    fun getPropertiesRawQueryPaging(query: SupportSQLiteQuery): PagingSource<Int, PropertyAndTenant>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(property: Property)
