@@ -39,7 +39,7 @@ constructor(
         ) {
             return lastResultFlow
         }
-        val skipInitialize = true
+        val skipInitialize = false
 
         //create new data stream
         val newResult =
