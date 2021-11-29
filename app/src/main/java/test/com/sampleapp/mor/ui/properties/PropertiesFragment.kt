@@ -51,7 +51,6 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
         super.onViewCreated(view, savedInstanceState)
 
         setupLoadStateAdapter()
-        binding.list.adapter = adapter
         setupListLayoutManager()
         loadProperties(PropertyStatusFilter.OCCUPIED)
     }
