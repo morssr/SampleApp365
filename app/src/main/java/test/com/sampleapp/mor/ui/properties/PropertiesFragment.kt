@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
@@ -41,8 +40,9 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding =
-            DataBindingUtil.inflate(layoutInflater, R.layout.fragment_properties, container, false)
+        binding = DataBindingUtil.inflate(
+            layoutInflater, R.layout.fragment_properties, container, false
+        )
 
         return binding.root
     }
@@ -77,15 +77,8 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
         }
     }
 
+    override fun onPropertyClick(property: PropertyAndTenant, position: Int) {
 
-    fun loadAllProperties() {
-        lifecycleScope.launchWhenResumed {
-            propertiesViewModel.getPropertiesByStatusFlow().collect { list ->
-                list.forEach {
-                    Log.d(TAG, "loadAllProperties: $it")
-                }
-            }
-        }
     }
 
     private fun cancelLoadJob() {
@@ -131,9 +124,6 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
             layoutManager = manager
             itemAnimator = null
         }
-    }
-
-    override fun onPropertyClick(property: PropertyAndTenant, position: Int) {
     }
 
     private fun showEmptyList(show: Boolean) {
