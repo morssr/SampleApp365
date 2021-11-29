@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiMockResponsesFactory {
 
-    private const val PAGE_LOAD_DELAY = 2000L
+    private const val PAGE_LOAD_DELAY = 3000L
 
     const val propertiesPage1FileName = "properties1.json"
     const val propertiesPage2FileName = "properties2.json"
