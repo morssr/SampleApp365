@@ -39,10 +39,15 @@ constructor(
         ) {
             return lastResultFlow
         }
+        val skipInitialize = true
 
         //create new data stream
         val newResult =
-            repository.getPropertiesByStatusPaging(propertyStatusFilter, tenantStatusFilter, true)
+            repository.getPropertiesByStatusPaging(
+                propertyStatusFilter,
+                tenantStatusFilter,
+                skipInitialize
+            )
                 .cachedIn(viewModelScope)
 
         //replace the old flow with the new one
