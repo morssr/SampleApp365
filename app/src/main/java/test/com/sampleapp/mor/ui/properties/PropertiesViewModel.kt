@@ -1,4 +1,4 @@
-package test.com.sampleapp.mor.ui
+package test.com.sampleapp.mor.ui.properties
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel

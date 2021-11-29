@@ -1,4 +1,4 @@
-package test.com.sampleapp.mor.ui
+package test.com.sampleapp.mor.ui.utils.paging
 
 import android.view.ViewGroup
 import androidx.paging.LoadState

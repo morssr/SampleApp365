@@ -1,4 +1,4 @@
-package test.com.sampleapp.mor.ui
+package test.com.sampleapp.mor.ui.properties
 
 import androidx.recyclerview.widget.DiffUtil
 import test.com.sampleapp.mor.data.cache.relations.PropertyAndTenant

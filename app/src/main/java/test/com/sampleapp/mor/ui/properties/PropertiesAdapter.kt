@@ -1,4 +1,4 @@
-package test.com.sampleapp.mor.ui
+package test.com.sampleapp.mor.ui.properties
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

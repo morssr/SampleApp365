@@ -5,8 +5,8 @@ import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import test.com.sampleapp.mor.data.api.resposes.PropertiesResponse
 import test.com.sampleapp.mor.data.cache.relations.PropertyAndTenant
-import test.com.sampleapp.mor.ui.PropertyStatusFilter
-import test.com.sampleapp.mor.ui.TenantStatusFilter
+import test.com.sampleapp.mor.ui.properties.PropertyStatusFilter
+import test.com.sampleapp.mor.ui.properties.TenantStatusFilter
 
 interface PropertiesRepository {
 

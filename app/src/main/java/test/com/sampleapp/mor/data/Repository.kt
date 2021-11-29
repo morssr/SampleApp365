@@ -12,8 +12,8 @@ import test.com.sampleapp.mor.data.cache.AppDatabase
 import test.com.sampleapp.mor.data.cache.paging.PropertiesRemoteMediator
 import test.com.sampleapp.mor.data.cache.relations.PropertyAndTenant
 import test.com.sampleapp.mor.data.cache.utilities.converters.QueryHelper
-import test.com.sampleapp.mor.ui.PropertyStatusFilter
-import test.com.sampleapp.mor.ui.TenantStatusFilter
+import test.com.sampleapp.mor.ui.properties.PropertyStatusFilter
+import test.com.sampleapp.mor.ui.properties.TenantStatusFilter
 import javax.inject.Inject
 import javax.inject.Singleton
 

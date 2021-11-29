@@ -2,8 +2,8 @@ package test.com.sampleapp.mor.data.cache.utilities.converters
 
 import test.com.sampleapp.mor.data.cache.entities.status.OccupationStatus
 import test.com.sampleapp.mor.data.cache.entities.status.TenantStatus
-import test.com.sampleapp.mor.ui.PropertyStatusFilter
-import test.com.sampleapp.mor.ui.TenantStatusFilter
+import test.com.sampleapp.mor.ui.properties.PropertyStatusFilter
+import test.com.sampleapp.mor.ui.properties.TenantStatusFilter
 
 object QueryHelper {
 

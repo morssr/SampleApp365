@@ -1,4 +1,4 @@
-package test.com.sampleapp.mor.ui
+package test.com.sampleapp.mor.ui.properties
 
 import android.os.Bundle
 import android.util.Log
@@ -23,6 +23,7 @@ import kotlinx.coroutines.launch
 import test.com.sampleapp.mor.R
 import test.com.sampleapp.mor.data.cache.relations.PropertyAndTenant
 import test.com.sampleapp.mor.databinding.FragmentPropertiesBinding
+import test.com.sampleapp.mor.ui.utils.paging.LoadStateAdapter
 
 private const val TAG = "PropertiesFragment"
 

@@ -21,7 +21,7 @@ import test.com.sampleapp.mor.data.cache.entities.status.OccupationStatus
 import test.com.sampleapp.mor.data.cache.relations.PropertyAndTenant
 import test.com.sampleapp.mor.data.cache.utilities.converters.QueryHelper
 import test.com.sampleapp.mor.di.DatabaseModule
-import test.com.sampleapp.mor.ui.PropertyStatusFilter
+import test.com.sampleapp.mor.ui.properties.PropertyStatusFilter
 
 @RunWith(AndroidJUnit4::class)
 class DatabaseTest {
