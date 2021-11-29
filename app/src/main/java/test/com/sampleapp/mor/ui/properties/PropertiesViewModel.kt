@@ -42,7 +42,7 @@ constructor(
 
         //create new data stream
         val newResult =
-            repository.getPropertiesByStatusPaging(propertyStatusFilter, tenantStatusFilter)
+            repository.getPropertiesByStatusPaging(propertyStatusFilter, tenantStatusFilter, true)
                 .cachedIn(viewModelScope)
 
         //replace the old flow with the new one

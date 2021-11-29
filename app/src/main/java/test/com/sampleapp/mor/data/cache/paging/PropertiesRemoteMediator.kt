@@ -16,25 +16,22 @@ import java.io.IOException
 
 private const val TAG = "PropertiesRemoteMediator"
 private const val STARTING_PAGE_INDEX = 1
-const val LOAD_CASHED_DATA_FLAG = "-1"
 
 @SuppressLint("LongLogTag")
 @OptIn(ExperimentalPagingApi::class)
 class PropertiesRemoteMediator(
     private val service: PropertiesService,
-    private val appDatabase: AppDatabase
+    private val appDatabase: AppDatabase,
+    private val skipInitialize: Boolean = false
 ) : RemoteMediator<Int, PropertyAndTenant>() {
 
     override suspend fun initialize(): InitializeAction {
         //skips initial refresh and loads cached data from room(sql)
-//        return if (query == LOAD_CASHED_DATA_FLAG)
-//            InitializeAction.SKIP_INITIAL_REFRESH
-//        //starts data loading process from remote source.
-//        else InitializeAction.LAUNCH_INITIAL_REFRESH
-        Log.d(TAG, "initialize: ----------------------------------------------------------------")
-        return InitializeAction.LAUNCH_INITIAL_REFRESH
+        return if (skipInitialize)
+            InitializeAction.SKIP_INITIAL_REFRESH
+        //starts data loading process from remote source.
+        else InitializeAction.LAUNCH_INITIAL_REFRESH
     }
-
 
     override suspend fun load(
         loadType: LoadType,
@@ -88,6 +85,9 @@ class PropertiesRemoteMediator(
                 ?: return MediatorResult.Error(Exception("Empty result, no property found "))
 
             val endOfPaginationReached = properties.isEmpty()
+
+            Log.i(TAG, "load: endOfPaginationReached = $endOfPaginationReached")
+
             appDatabase.withTransaction {
                 // clear all tables in the database
                 if (loadType == LoadType.REFRESH) {
@@ -106,7 +106,7 @@ class PropertiesRemoteMediator(
 
                 Log.d(TAG, "load: insert remote keys called | remote keys size: ${keys.size}")
                 appDatabase.remoteKeysDao().insertAll(keys)
-                Log.d(TAG, "load: insert repos called | repos size: ${properties.size}")
+                Log.d(TAG, "load: insert called | size: ${properties.size}")
 
                 //mapping
                 val mappedPropertiesAndTenant = properties.mapToPropertiesAndTenants()

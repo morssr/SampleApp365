@@ -23,7 +23,8 @@ interface PropertiesRepository {
 
     fun getPropertiesByStatusPaging(
         propertyStatusFilter: PropertyStatusFilter = PropertyStatusFilter.ACTIVE,
-        tenantStatusFilter: TenantStatusFilter = TenantStatusFilter.ANY
+        tenantStatusFilter: TenantStatusFilter = TenantStatusFilter.ANY,
+        skipInitialize:Boolean = false
     ): Flow<PagingData<PropertyAndTenant>>
 
     suspend fun insertPropertiesAndTenant(properties: List<PropertyAndTenant>)

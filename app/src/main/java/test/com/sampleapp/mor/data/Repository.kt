@@ -45,7 +45,8 @@ class Repository @Inject constructor(
 
     override fun getPropertiesByStatusPaging(
         propertyStatusFilter: PropertyStatusFilter,
-        tenantStatusFilter: TenantStatusFilter
+        tenantStatusFilter: TenantStatusFilter,
+        skipInitialize: Boolean
     ): Flow<PagingData<PropertyAndTenant>> {
 
         val filterQuery =
@@ -57,8 +58,12 @@ class Repository @Inject constructor(
 
         @OptIn(ExperimentalPagingApi::class)
         return Pager(
-            config = PagingConfig(pageSize = 37),
-            remoteMediator = PropertiesRemoteMediator(propertiesService, appDatabase),
+            config = PagingConfig(pageSize = 12, enablePlaceholders = false),
+            remoteMediator = PropertiesRemoteMediator(
+                propertiesService,
+                appDatabase,
+                skipInitialize
+            ),
             pagingSourceFactory = pagingSourceFactory
         ).flow
     }
