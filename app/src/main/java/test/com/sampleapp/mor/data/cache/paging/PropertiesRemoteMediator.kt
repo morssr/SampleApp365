@@ -103,13 +103,15 @@ class PropertiesRemoteMediator(
                 val keys = properties.map {
                     RemoteKeys(0, it.propertyId, prevKey = prevKey, nextKey = nextKey)
                 }
-//                printRemoteKeys(keys)
+
                 Log.d(TAG, "load: insert remote keys called | remote keys size: ${keys.size}")
                 appDatabase.remoteKeysDao().insertAll(keys)
                 Log.d(TAG, "load: insert repos called | repos size: ${properties.size}")
 
-                appDatabase.propertiesDao()
-                    .insertAllPropertiesAndTenants(properties.mapToPropertiesAndTenants())
+                //mapping
+                val mappedPropertiesAndTenant = properties.mapToPropertiesAndTenants()
+                //db insertion
+                appDatabase.propertiesDao().insertAllPropertiesAndTenants(mappedPropertiesAndTenant)
 
                 Log.i(TAG, "load: load page '$page' accomplished")
             }

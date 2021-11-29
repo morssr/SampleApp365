@@ -28,7 +28,7 @@ interface PropertiesDao {
     @RawQuery(observedEntities = [Property::class, Tenant::class])
     fun getPropertiesRawQueryFlow(query: SupportSQLiteQuery): Flow<List<PropertyAndTenant>>
 
-   @Transaction
+    @Transaction
     @RawQuery(observedEntities = [Property::class, Tenant::class])
     fun getPropertiesRawQueryPaging(query: SupportSQLiteQuery): PagingSource<Int, PropertyAndTenant>
 

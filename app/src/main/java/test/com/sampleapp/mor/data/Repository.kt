@@ -57,7 +57,7 @@ class Repository @Inject constructor(
 
         @OptIn(ExperimentalPagingApi::class)
         return Pager(
-            config = PagingConfig(pageSize = 37, enablePlaceholders = false),
+            config = PagingConfig(pageSize = 37),
             remoteMediator = PropertiesRemoteMediator(propertiesService, appDatabase),
             pagingSourceFactory = pagingSourceFactory
         ).flow

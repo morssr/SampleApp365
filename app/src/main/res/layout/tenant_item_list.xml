@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tenant"
+            type="test.com.sampleapp.mor.data.cache.entities.Tenant" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_bright">
+
+        <TextView
+            android:id="@+id/tenant_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{tenant.firstName.concat(' ' + tenant.lastName)}"
+            app:layout_constraintEnd_toStartOf="@+id/tenant_status_tv"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Sagre" />
+
+        <TextView
+            android:id="@+id/tenant_status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@{tenant.tenantStatus.toString()}"
+            app:layout_constraintBottom_toBottomOf="@+id/tenant_name_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tenant_name_tv"
+            tools:text="ACTIVE" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
