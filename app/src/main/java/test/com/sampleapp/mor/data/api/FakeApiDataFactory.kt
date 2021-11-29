@@ -12,8 +12,8 @@ import test.com.sampleapp.mor.utilities.readAssetsFile
 
 object FakeApiDataFactory : PropertiesService {
 
-    const val propertiesPage1FileName = "properties.json"
-    const val propertiesPage2FileName = "properties2.json"
+    const val propertiesPage1FileName = "properties1.json"
+    const val propertiesPage2FileName = "properties4.json"
 
     val propertiesJsonFileNameMap = hashMapOf<Int, String>().also {
         it[1] = propertiesPage1FileName

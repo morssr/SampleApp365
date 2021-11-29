@@ -1,0 +1,184 @@
+{
+  "properties": [
+    {
+      "propertyId": "9f11fa09-3f2a-41232e85-9f52-d475edfa52ff",
+      "createdOn": "2021-08-15T07:13:06.737+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 825, Virginia Beach",
+      "occupiedStats": "occupied",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "76418B62-D35F-4D64-A723421-61934C84F6D9",
+        "firstName": "Markita",
+        "lastName": "Kearney",
+        "tenantStatus": "active"
+      },
+      "plan": "oneRate"
+    },
+    {
+      "propertyId": "54350e69-ca8d-42350f2-bd59-189ca29d64ca",
+      "createdOn": "2021-08-15T07:13:03.123+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 823, Virginia Beach",
+      "occupiedStats": "occupied",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "63927013-1B1D-41ED-8C234BB-162566D14FF6",
+        "firstName": "David",
+        "lastName": "Griggs 8",
+        "tenantStatus": "active"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "03e3a4a2-3ea2-4832355-be8a-a31b1c2821b8",
+      "createdOn": "2021-08-15T07:12:58.917+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 821, Virginia Beach",
+      "occupiedStats": "vacant",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "43BE0D8B-A219-457D-875234A-E407EAA23A60",
+        "firstName": "Helen P.",
+        "lastName": "Powell8",
+        "tenantStatus": "inactive"
+      },
+      "plan": "oneRate"
+    },
+    {
+      "propertyId": "8fea9365-b50d-47235bb-b5fa-28f0b1f4274e",
+      "createdOn": "2021-08-15T07:12:56.173+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 819, Virginia Beach",
+      "occupiedStats": "occupied",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "F00EDA02-A9BB-4057-9EB2345-4861DD911D02",
+        "firstName": "Crystal",
+        "lastName": "Escobar",
+        "tenantStatus": "active"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "396eb7e9-8a63-4123592-b747-2b668bcf4343",
+      "createdOn": "2021-08-15T07:12:51.680+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 817, Virginia Beach",
+      "occupiedStats": "vacant",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "A4C74670-23B3-47A4-AB1234D-981EEFDA437A",
+        "firstName": "Ross",
+        "lastName": "Goldman8",
+        "tenantStatus": "inactive"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "e057f423-9c65-4e235a9-bd71-1b47a7c912fb",
+      "createdOn": "2021-08-15T07:12:48.267+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 815, Virginia Beach",
+      "occupiedStats": "occupied",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "4FFD5A5A-2009-41AA-B22348B-3FB8605C46F5",
+        "firstName": "Dustin Charles",
+        "lastName": "Crisler",
+        "tenantStatus": "active"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "b7052106-8695-4235812-a721-a4c934dfed2c",
+      "createdOn": "2021-08-15T07:12:38.237+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 813, Virginia Beach",
+      "occupiedStats": "vacant",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "9055F677-64B1-466B-A9234213-63D13CB5075F",
+        "firstName": "Hope House Lakewood West Office",
+        "lastName": null,
+        "tenantStatus": "inactive"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "e04af15b-5588-423589f-b84c-0f3b2a181e05",
+      "createdOn": "2021-08-15T07:12:34.187+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 811, Virginia Beach",
+      "occupiedStats": "occupied",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "1F6BDC32-78D9-4224-9A234DA-A2989D1F7608",
+        "firstName": "Blake",
+        "lastName": "Thomas 8",
+        "tenantStatus": "active"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "e03c6e0b-0546-4d4345a-ba9a-ac3758886ee6",
+      "createdOn": "2021-08-15T07:12:29.597+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 809, Virginia Beach",
+      "occupiedStats": "vacant",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "B84F07BD-4B3D-47D5-B1234F5-DF27D57F9AC8",
+        "firstName": "Bertha",
+        "lastName": "Corbin",
+        "tenantStatus": "inactive"
+      },
+      "plan": "oneRate"
+    },
+    {
+      "propertyId": "33fb8061-42b1-41345a7-89f6-2698eb07ea9d",
+      "createdOn": "2021-08-15T07:12:24.520+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 807, Virginia Beach",
+      "occupiedStats": "occupied",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "53FD3F18-E869-4B36-962345E-784F3AC3BB37",
+        "firstName": "Orette",
+        "lastName": "Grant",
+        "tenantStatus": "active"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "265c2a13-b02350b-4acd-8227-480d19b50c9a",
+      "createdOn": "2021-08-15T07:12:18.350+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 805, Virginia Beach",
+      "occupiedStats": "vacant",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "CEADA60F-DEA2-4B4A-9B02348-911F809CE2A8",
+        "firstName": "Michelle",
+        "lastName": "Winslow8",
+        "tenantStatus": "inactive"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "170a9eb9-a143533-4a94-b04a-3f7dca22cd84",
+      "createdOn": "2021-08-15T07:12:13.217+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 803, Virginia Beach",
+      "occupiedStats": "vacant",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "3930A97C-D1A3-49D7-B5A2346-4AF40D7AE336",
+        "firstName": "Michael Hugh",
+        "lastName": "Beckford",
+        "tenantStatus": "inactive"
+      },
+      "plan": "oneRate"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "properties": [
+    {
+      "propertyId": "9dee21312532-44b8-4697-a759-ccffe7551623",
+      "createdOn": "2021-08-15T07:13:59.533+00:00",
+      "address": "Tel Aviv Rothschild 22",
+      "occupiedStats": "occupied",
+      "owner": "Mor Shaar",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "A62FAC96-1Eerwe11-406C-9A99-A5E3E0B45590",
+        "firstName": "Sagre",
+        "lastName": "Stutzman 8",
+        "tenantStatus": "active"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "40671235867-576f-41f6-97ca-9f807d3ac4c9",
+      "createdOn": "2021-08-15T07:13:49.607+00:00",
+      "address": "Ashdod Ha-Banim 5",
+      "occupiedStats": "vacant",
+      "owner": "The Residential Corporation",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "CF645DE2-CB823423B-4615-8A5C-D2E51A101311",
+        "firstName": "Hope House Princess Anne Office",
+        "lastName": null,
+        "tenantStatus": "inactive"
+      },
+      "plan": "oneRate"
+    },
+    {
+      "propertyId": "4fcc5123610-c56e-49e8-b66a-04a600aa929c",
+      "createdOn": "2021-08-15T07:13:45.487+00:00",
+      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt I, Norfolk",
+      "occupiedStats": "vacant",
+      "owner": "The Residential Corporation",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "C70E289E4-B23F-4EE2342345-9FC4-4B33A8F5A00F",
+        "firstName": "Hope House",
+        "lastName": "Foundation",
+        "tenantStatus": "inactive"
+      },
+      "plan": "oneRate"
+    },
+    {
+      "propertyId": "063ce7e2341-1cb1-4562-8f8f-77ae99672a4d",
+      "createdOn": "2021-08-15T07:13:41.163+00:00",
+      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt H, Norfolk",
+      "occupiedStats": "vacant",
+      "owner": "The Residential Corporation",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "EC3CF536-9F0E-4F99-2342234-814D1A29F007",
+        "firstName": "Xavier  D.",
+        "lastName": "Chastain",
+        "tenantStatus": "inactive"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "ed46bca2349-d302-4309-a2f1-937504fe9ba2",
+      "createdOn": "2021-08-15T07:13:36.547+00:00",
+      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt G, Norfolk",
+      "occupiedStats": "vacant",
+      "owner": "The Residential Corporation",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "E18435B4-6AEA-4EE3-8werwe0FF-932F27C0E6B5",
+        "firstName": "Eunice",
+        "lastName": "Stepp8",
+        "tenantStatus": "inactive"
+      },
+      "plan": "oneRate"
+    },
+    {
+      "propertyId": "7f8e7d83-2e2346d-4455-9fac-b7191df461c6",
+      "createdOn": "2021-08-15T07:13:31.690+00:00",
+      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt F, Norfolk",
+      "occupiedStats": "occupied",
+      "owner": "The Residential Corporation",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "6740505E-B5B2-44C6-82342397D-A1F4D93DA062",
+        "firstName": "Jessica",
+        "lastName": "Smith8",
+        "tenantStatus": "active"
+      },
+      "plan": "oneRate"
+    },
+    {
+      "propertyId": "ad34859e-032343a-4ba3-b8f5-41e8a3496f38",
+      "createdOn": "2021-08-15T07:13:26.157+00:00",
+      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt E, Norfolk",
+      "occupiedStats": "occupied",
+      "owner": "The Residential Corporation",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "B7971AFE-937B-458F-87werwer-185910BB676C",
+        "firstName": "Luanne",
+        "lastName": "Snipes8",
+        "tenantStatus": "active"
+      },
+      "plan": "oneRate"
+    },
+    {
+      "propertyId": "1685ad1f-1f23409-4a41-9b1d-f15db6ae665c",
+      "createdOn": "2021-08-15T07:13:21.183+00:00",
+      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt D, Norfolk",
+      "occupiedStats": "occupied",
+      "owner": "The Residential Corporation",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "9DA2FC7F-946B-459A-88A2342342-D2F11A459AE3",
+        "firstName": "Gail",
+        "lastName": "Moore8",
+        "tenantStatus": "active"
+      },
+      "plan": "oneRate"
+    },
+    {
+      "propertyId": "94a58a0d-b032340-4abc-ac4c-496a81767ce2",
+      "createdOn": "2021-08-15T07:13:16.197+00:00",
+      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt C, Norfolk",
+      "occupiedStats": "vacant",
+      "owner": "The Residential Corporation",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "98375E30-F57C-46D8-8827234234-5DC85DCBA017",
+        "firstName": "Carolyn",
+        "lastName": "Christian8",
+        "tenantStatus": "inactive"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "bd41e1f5-2652343-4b12-8198-13e6761746df",
+      "createdOn": "2021-08-15T07:13:11.423+00:00",
+      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt B, Norfolk",
+      "occupiedStats": "occupied",
+      "owner": "The Residential Corporation",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "D934CA32-2DE8-404E-923423436F-2D66D6C97D31",
+        "firstName": "Catherine",
+        "lastName": "Grillo8",
+        "tenantStatus": "active"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "18386ac9-6323490-4245-bde1-4c072ab6ae86",
+      "createdOn": "2021-08-15T07:13:06.733+00:00",
+      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt A, Norfolk",
+      "occupiedStats": "vacant",
+      "owner": "The Residential Corporation",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "0479061F-AF9C-4BC2-B3B2342A-2B37060EAF9F",
+        "firstName": "Dorothy",
+        "lastName": "Peace8",
+        "tenantStatus": "inactive"
+      },
+      "plan": "On Demand"
+    },
+    {
+      "propertyId": "a2b9264d-f6234a3-4f6b-a997-be9a65922ffb",
+      "createdOn": "2021-08-15T07:14:14.337+00:00",
+      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 851, Virginia Beach",
+      "occupiedStats": "vacant",
+      "owner": "Sandy Court, LLC",
+      "ownerStatus": "active",
+      "tenant": {
+        "contactId": "68CC5FC8-4320-4395-B2723423B-659EB05ECFE9",
+        "firstName": "Eileen",
+        "lastName": "Wren",
+        "tenantStatus": "inactive"
+      },
+      "plan": "On Demand"
+    }
+  ]
+}
