@@ -52,7 +52,7 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
 
         setupLoadStateAdapter()
         setupListLayoutManager()
-        loadProperties(PropertyStatusFilter.OCCUPIED)
+        loadProperties(PropertyStatusFilter.ACTIVE)
     }
 
     private fun loadProperties(

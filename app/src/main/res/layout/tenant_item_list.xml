@@ -36,6 +36,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/tenant_name_tv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tenant_name_tv"
+            app:textColorByTenantStatus="@{tenant.tenantStatus}"
             tools:text="ACTIVE" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
