@@ -18,8 +18,8 @@ class FakeApiDataFactoryTest {
     @Test
     fun assertThat_propertiesJsonFile_isExistInAssetsDirectory() {
         listOf(
-            FakeApiDataFactory.getPropertiesJsonFile(context, propertiesPage1FileName),
-            FakeApiDataFactory.getPropertiesJsonFile(context, propertiesPage2FileName)
+            FakeApiDataFactory.getPropertiesJsonFile(propertiesPage1FileName),
+            FakeApiDataFactory.getPropertiesJsonFile(propertiesPage2FileName)
         ).forEach {
             assertThat(it, `is`(notNullValue()))
         }

@@ -56,5 +56,4 @@ class PropertiesRemoteMediatorTest {
 
         assertTrue(result is RemoteMediator.MediatorResult.Success)
     }
-
 }

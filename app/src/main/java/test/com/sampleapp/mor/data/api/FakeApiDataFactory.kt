@@ -9,11 +9,13 @@ import test.com.sampleapp.mor.data.api.resposes.PropertyResponse
 import test.com.sampleapp.mor.data.api.utils.NullToEmptyStringAdapter
 import test.com.sampleapp.mor.data.api.utils.mapToPropertiesAndTenants
 import test.com.sampleapp.mor.utilities.readAssetsFile
+import java.io.InputStreamReader
 
 object FakeApiDataFactory : PropertiesService {
 
     const val propertiesPage1FileName = "properties1.json"
-    const val propertiesPage2FileName = "properties4.json"
+    const val propertiesPage2FileName = "properties2.json"
+    const val propertiesPage3FileName = "properties3.json"
 
     val propertiesJsonFileNameMap = hashMapOf<Int, String>().also {
         it[1] = propertiesPage1FileName
@@ -30,13 +32,17 @@ object FakeApiDataFactory : PropertiesService {
     @JvmStatic
     fun initFakeApi(context: Context) {
         propertiesJsonFilesMap = hashMapOf<Int, String>().also {
-            it[1] = getPropertiesJsonFile(context, propertiesPage1FileName)
-            it[2] = getPropertiesJsonFile(context, propertiesPage2FileName)
+            it[1] = getPropertiesJsonFile(propertiesPage1FileName)
+            it[2] = getPropertiesJsonFile(propertiesPage2FileName)
         }
     }
 
-    fun getPropertiesJsonFile(context: Context, fileName: String) =
-        context.assets.readAssetsFile(fileName)
+    fun getPropertiesJsonFile(fileName: String) : String{
+        val reader = InputStreamReader(this.javaClass.classLoader?.getResourceAsStream(fileName))
+        val content = reader.readText()
+        reader.close()
+        return content
+    }
 
     fun getPropertiesList(
         context: Context,
@@ -50,7 +56,7 @@ object FakeApiDataFactory : PropertiesService {
             2 -> files.getValue(2)
             else -> throw Exception("file page '$page' not exist")
         }
-        return jsonConverter.fromJson(getPropertiesJsonFile(context, fileName))?.properties
+        return jsonConverter.fromJson(getPropertiesJsonFile(fileName))?.properties
     }
 
     fun getFirstPagePropertiesAndTenants(context: Context) =
