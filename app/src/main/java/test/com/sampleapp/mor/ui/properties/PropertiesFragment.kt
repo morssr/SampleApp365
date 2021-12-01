@@ -15,6 +15,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -83,15 +84,21 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
     }
 
     override fun onPropertyClick(property: PropertyAndTenant) {
-        Log.d(TAG, "onPropertyClick() called with: property = [$property]")
+        property.property.run {
+            showPropertyEventsDialog(address, occupationStatus.toString())
+        }
     }
 
     override fun onOwnerClick(property: PropertyAndTenant) {
-        Log.d(TAG, "onOwnerClick() called with: property = [$property]")
+        property.property.run {
+            showPropertyEventsDialog(owner, ownerStatus.toString())
+        }
     }
 
     override fun onTenantClick(property: PropertyAndTenant) {
-        Log.d(TAG, "onTenantClick() called with: property = [$property]")
+        property.tenant?.run {
+            showPropertyEventsDialog("$firstName $lastName", tenantStatus.toString())
+        }
     }
 
     private fun cancelLoadJob() {
@@ -176,5 +183,15 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
                 loadPropertiesByFilters(tenantStatusFilter = filter)
             }
         }
+    }
+
+    private fun showPropertyEventsDialog(title: String, content: String) {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(title)
+            .setMessage(content)
+            .setPositiveButton(resources.getString(android.R.string.ok)) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 }
