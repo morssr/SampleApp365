@@ -166,6 +166,8 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
                 val filter =
                     PropertyStatusFilter.valueOf(resources.getStringArray(R.array.properties_filters)[i].uppercase())
 
+                it.clearFocus()
+
                 loadPropertiesByFilters(propertyStatusFilter = filter)
             }
         }
@@ -179,6 +181,8 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
             it.setOnItemClickListener { _, _, i, _ ->
                 val filter =
                     TenantStatusFilter.valueOf(resources.getStringArray(R.array.tenant_filters)[i].uppercase())
+
+                it.clearFocus()
 
                 loadPropertiesByFilters(tenantStatusFilter = filter)
             }
