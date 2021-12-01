@@ -1,4 +1,4 @@
-package test.com.sampleapp.mor.utilities
+package test.com.sampleapp.mor.utilities.customviews
 
 import android.content.Context
 import android.util.AttributeSet

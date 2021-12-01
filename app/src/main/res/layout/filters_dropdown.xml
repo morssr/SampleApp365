@@ -25,7 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <test.com.sampleapp.mor.utilities.NonFilterableAutoCompleteTextView
+            <test.com.sampleapp.mor.utilities.customviews.NonFilterableAutoCompleteTextView
                 android:id="@+id/properties_dropdown_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
             app:layout_constraintStart_toEndOf="@id/properties_filter_menu"
             app:layout_constraintTop_toTopOf="parent">
 
-            <test.com.sampleapp.mor.utilities.NonFilterableAutoCompleteTextView
+            <test.com.sampleapp.mor.utilities.customviews.NonFilterableAutoCompleteTextView
                 android:id="@+id/tenants_dropdown_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
