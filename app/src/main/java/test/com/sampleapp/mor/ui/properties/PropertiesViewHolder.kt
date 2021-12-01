@@ -1,6 +1,5 @@
 package test.com.sampleapp.mor.ui.properties
 
-import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import test.com.sampleapp.mor.data.cache.relations.PropertyAndTenant
 import test.com.sampleapp.mor.databinding.PropertyListItemBinding
@@ -16,6 +15,7 @@ class PropertiesViewHolder(
         listener: PropertiesAdapter.PropertiesAdapterListener
     ) {
         binding.property = propertyAndTenant
+        binding.ownerInclude.property = propertyAndTenant
         binding.tenantInclude.tenant = propertyAndTenant.tenant
         binding.listener = listener
     }
