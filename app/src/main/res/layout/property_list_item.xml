@@ -150,28 +150,29 @@
                     app:textColorByOwnerStatus="@{property.property.ownerStatus}"
                     tools:text="ACTIVE" />
 
-                <include
-                    android:id="@+id/tenant_include"
-                    layout="@layout/tenant_item_list"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:minHeight="36dp"
                     android:onClick="@{(view) -> listener.onTenantClick(property)}"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    app:cardBackgroundColor="@color/blue_50_alpha_060"
+                    app:cardElevation="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/owner_tv" />
+                    app:layout_constraintTop_toBottomOf="@+id/owner_tv">
 
-                <!--                <View-->
-                <!--                    android:id="@+id/divider"-->
-                <!--                    android:layout_width="0dp"-->
-                <!--                    android:layout_height="5dp"-->
-                <!--                    android:background="?android:attr/listDivider"-->
-                <!--                    android:paddingBottom="8dp"-->
-                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-                <!--                    app:layout_constraintStart_toStartOf="parent" />-->
+                    <include
+                        android:id="@+id/tenant_include"
+                        layout="@layout/tenant_item_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical" />
+
+                </com.google.android.material.card.MaterialCardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
