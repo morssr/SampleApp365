@@ -15,9 +15,8 @@ class PropertiesViewHolder(
         propertyAndTenant: PropertyAndTenant,
         listener: PropertiesAdapter.PropertiesAdapterListener
     ) {
-        Log.d(TAG, "bind: $propertyAndTenant")
-
         binding.property = propertyAndTenant
         binding.tenantInclude.tenant = propertyAndTenant.tenant
+        binding.listener = listener
     }
 }

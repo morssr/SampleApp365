@@ -12,7 +12,9 @@ class PropertiesAdapter(private val listener: PropertiesAdapterListener) :
     PagingDataAdapter<PropertyAndTenant, PropertiesViewHolder>(PropertyDiffCallback) {
 
     interface PropertiesAdapterListener {
-        fun onPropertyClick(property: PropertyAndTenant, position: Int)
+        fun onPropertyClick(property: PropertyAndTenant)
+        fun onOwnerClick(property: PropertyAndTenant)
+        fun onTenantClick(property: PropertyAndTenant)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PropertiesViewHolder {

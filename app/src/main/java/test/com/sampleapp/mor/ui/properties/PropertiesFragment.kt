@@ -82,8 +82,16 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
         }
     }
 
-    override fun onPropertyClick(property: PropertyAndTenant, position: Int) {
+    override fun onPropertyClick(property: PropertyAndTenant) {
+        Log.d(TAG, "onPropertyClick() called with: property = [$property]")
+    }
 
+    override fun onOwnerClick(property: PropertyAndTenant) {
+        Log.d(TAG, "onOwnerClick() called with: property = [$property]")
+    }
+
+    override fun onTenantClick(property: PropertyAndTenant) {
+        Log.d(TAG, "onTenantClick() called with: property = [$property]")
     }
 
     private fun cancelLoadJob() {
