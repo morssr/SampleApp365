@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -38,6 +39,7 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
     private val adapter = PropertiesAdapter(this)
 
     private var loadJob: Job? = null
+    private var eventsDialog: AlertDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,6 +61,11 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
 
         setupPropertyFilterDropdown()
         setupTenantFilterDropdown()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        dismissDialog(eventsDialog)
     }
 
     private fun loadPropertiesByFilters(
@@ -85,19 +92,19 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
 
     override fun onPropertyClick(property: PropertyAndTenant) {
         property.property.run {
-            showPropertyEventsDialog(address, occupationStatus.toString())
+            eventsDialog = showPropertyEventsDialog(address, occupationStatus.toString())
         }
     }
 
     override fun onOwnerClick(property: PropertyAndTenant) {
         property.property.run {
-            showPropertyEventsDialog(owner, ownerStatus.toString())
+            eventsDialog = showPropertyEventsDialog(owner, ownerStatus.toString())
         }
     }
 
     override fun onTenantClick(property: PropertyAndTenant) {
         property.tenant?.run {
-            showPropertyEventsDialog("$firstName $lastName", tenantStatus.toString())
+            eventsDialog = showPropertyEventsDialog("$firstName $lastName", tenantStatus.toString())
         }
     }
 
@@ -189,13 +196,20 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
         }
     }
 
-    private fun showPropertyEventsDialog(title: String, content: String) {
-        MaterialAlertDialogBuilder(requireContext())
+    private fun showPropertyEventsDialog(title: String, content: String) : AlertDialog {
+        return MaterialAlertDialogBuilder(requireContext())
             .setTitle(title)
             .setMessage(content)
             .setPositiveButton(resources.getString(android.R.string.ok)) { dialog, _ ->
                 dialog.dismiss()
             }
             .show()
+    }
+
+    private fun dismissDialog(dialog: AlertDialog?) {
+        dialog?.let {
+            if (dialog.isShowing)
+                dialog.dismiss()
+        }
     }
 }
