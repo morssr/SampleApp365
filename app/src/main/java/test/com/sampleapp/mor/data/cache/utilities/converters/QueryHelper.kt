@@ -15,7 +15,7 @@ object QueryHelper {
     @JvmStatic
     fun buildPropertiesByStatusQuery(
         propertyStatus: PropertyStatusFilter = PropertyStatusFilter.ACTIVE,
-        tenantStatus: TenantStatusFilter = TenantStatusFilter.ANY
+        tenantStatus: TenantStatusFilter = TenantStatusFilter.ALL
     ): String {
 
         return StringBuilder().apply {
@@ -23,7 +23,7 @@ object QueryHelper {
             append("SELECT * FROM $PROPERTIES_TABLE_NAME").append(WHITE_SPACE)
 
             //if tenant status is not required skip the join - needed because null tenants objects
-            if (tenantStatus != TenantStatusFilter.ANY)
+            if (tenantStatus != TenantStatusFilter.ALL)
                 append("INNER JOIN tenants ON property_id = id").append(WHITE_SPACE)
 
             //filter properties by occupation status
@@ -38,12 +38,12 @@ object QueryHelper {
             append(")").append(WHITE_SPACE)
 
             //filter properties by tenant status
-            if (tenantStatus != TenantStatusFilter.ANY) {
+            if (tenantStatus != TenantStatusFilter.ALL) {
                 append("And (tenant_status = ")
                 when (tenantStatus) {
                     TenantStatusFilter.ACTIVE -> append("'${TenantStatus.ACTIVE.status}'")
                     TenantStatusFilter.INACTIVE -> append("'${TenantStatus.INACTIVE.status}'")
-                    TenantStatusFilter.ANY -> append("")
+                    TenantStatusFilter.ALL -> append("")
                 }
                 append(")")
             }

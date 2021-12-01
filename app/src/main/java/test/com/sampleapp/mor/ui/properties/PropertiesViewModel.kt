@@ -13,6 +13,8 @@ import test.com.sampleapp.mor.data.PropertiesRepository
 import test.com.sampleapp.mor.data.cache.relations.PropertyAndTenant
 import javax.inject.Inject
 
+private const val TAG = "PropertiesViewModel"
+
 @HiltViewModel
 class PropertiesViewModel @Inject
 constructor(
@@ -22,23 +24,26 @@ constructor(
 
     private var currentFilteredPropertiesFlow: Flow<PagingData<PropertyAndTenant>>? = null
 
-    private var currentPropertyStatusFilter = PropertyStatusFilter.ACTIVE
-    private var currentTenantStatusFilter = TenantStatusFilter.ANY
+    var currentPropertyStatusFilter = PropertyStatusFilter.ACTIVE
+        private set
+    var currentTenantStatusFilter = TenantStatusFilter.ALL
+        private set
 
     fun getPropertiesAndTenantsByStatusPaging(
         propertyStatusFilter: PropertyStatusFilter = PropertyStatusFilter.ACTIVE,
-        tenantStatusFilter: TenantStatusFilter = TenantStatusFilter.ANY
+        tenantStatusFilter: TenantStatusFilter = TenantStatusFilter.ALL
     ): Flow<PagingData<PropertyAndTenant>> {
 
         val lastResultFlow = currentFilteredPropertiesFlow
 
         //returns cached data if requirements matched
         if (propertyStatusFilter == currentPropertyStatusFilter
-            && currentTenantStatusFilter == currentTenantStatusFilter
+            && tenantStatusFilter == currentTenantStatusFilter
             && lastResultFlow != null
         ) {
             return lastResultFlow
         }
+
         val skipInitialize = false
 
         //create new data stream
@@ -52,7 +57,17 @@ constructor(
 
         //replace the old flow with the new one
         currentFilteredPropertiesFlow = newResult
+        updateStatus(propertyStatusFilter, tenantStatusFilter)
+
         return newResult
+    }
+
+    private fun updateStatus(
+        propertyStatusFilter: PropertyStatusFilter,
+        tenantStatusFilter: TenantStatusFilter
+    ) {
+        currentPropertyStatusFilter = propertyStatusFilter
+        currentTenantStatusFilter = tenantStatusFilter
     }
 
     fun insertAll(properties: List<PropertyAndTenant>) {
@@ -61,7 +76,7 @@ constructor(
         }
     }
 
-    suspend fun getPropertiesByStatusFlow() = repository.getPropertiesByStatusFlow()
+    fun getPropertiesByStatusFlow() = repository.getPropertiesByStatusFlow()
 
-    suspend fun getAllPropertiesApi(page: Int) = repository.getAllPropertiesApi(page)
+    private suspend fun getAllPropertiesApi(page: Int) = repository.getAllPropertiesApi(page)
 }

@@ -8,6 +8,8 @@
         <variable
             name="tenant"
             type="test.com.sampleapp.mor.data.cache.entities.Tenant" />
+
+        <import type="test.com.sampleapp.mor.data.cache.entities.status.TenantStatus" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,11 +22,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@{tenant.firstName.concat(' ' + tenant.lastName)}"
-            app:layout_constraintEnd_toStartOf="@+id/tenant_status_tv"
+            android:text="@{tenant.firstName != null ? tenant.firstName : ``}"
+            app:layout_constraintEnd_toStartOf="@+id/tenant_last_name_tv"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            tools:text="Sagre" />
+
+        <TextView
+            android:id="@+id/tenant_last_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@{tenant.lastName != null ? tenant.lastName : ``}"
+            app:layout_constraintBottom_toBottomOf="@+id/tenant_name_tv"
+            app:layout_constraintStart_toEndOf="@id/tenant_name_tv"
+            app:layout_constraintTop_toTopOf="@+id/tenant_name_tv"
             tools:text="Sagre" />
 
         <TextView
@@ -32,11 +45,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
-            android:text="@{tenant.tenantStatus.toString()}"
+            android:text="@{tenant != null ? tenant.tenantStatus.toString() : `UNKNOWN`}"
             app:layout_constraintBottom_toBottomOf="@+id/tenant_name_tv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tenant_name_tv"
-            app:textColorByTenantStatus="@{tenant.tenantStatus}"
+            app:textColorByTenantStatus="@{tenant != null ? tenant.tenantStatus : TenantStatus.UNKNOWN}"
             tools:text="ACTIVE" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,15 +16,15 @@ interface PropertiesRepository {
 
     fun getPropertiesByStatusFlow(
         propertyStatusFilter: PropertyStatusFilter = PropertyStatusFilter.ACTIVE,
-        tenantStatusFilter: TenantStatusFilter = TenantStatusFilter.ANY
+        tenantStatusFilter: TenantStatusFilter = TenantStatusFilter.ALL
     ): Flow<List<PropertyAndTenant>>
 
     suspend fun getAllPropertiesApi(page: Int): Response<PropertiesResponse>
 
     fun getPropertiesByStatusPaging(
         propertyStatusFilter: PropertyStatusFilter = PropertyStatusFilter.ACTIVE,
-        tenantStatusFilter: TenantStatusFilter = TenantStatusFilter.ANY,
-        skipInitialize:Boolean = false
+        tenantStatusFilter: TenantStatusFilter = TenantStatusFilter.ALL,
+        skipInitialize: Boolean = false
     ): Flow<PagingData<PropertyAndTenant>>
 
     suspend fun insertPropertiesAndTenant(properties: List<PropertyAndTenant>)

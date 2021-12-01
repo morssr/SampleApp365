@@ -2,4 +2,8 @@
     <string name="app_name">Sample App 365</string>
     <string name="no_results">No results</string>
     <string name="retry">Retry</string>
+    <string name="property_status">Property status</string>
+    <string name="tenant_status">Tenant status</string>
+    <string name="title_active">Active</string>
+    <string name="title_all">All</string>
 </resources>

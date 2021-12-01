@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="properties_filters">
+        <item>Active</item>
+        <item>Occupied</item>
+        <item>Vacant</item>
+        <item>Inactive</item>
+    </string-array>
+
+    <string-array name="tenant_filters">
+        <item>All</item>
+        <item>Active</item>
+        <item>Inactive</item>
+    </string-array>
+</resources>

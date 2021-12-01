@@ -5,6 +5,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
@@ -52,12 +54,15 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
 
         setupLoadStateAdapter()
         setupListLayoutManager()
-        loadProperties(PropertyStatusFilter.ACTIVE)
+        loadPropertiesByFilters(PropertyStatusFilter.ACTIVE)
+
+        setupPropertyFilterDropdown()
+        setupTenantFilterDropdown()
     }
 
-    private fun loadProperties(
-        propertyStatusFilter: PropertyStatusFilter = PropertyStatusFilter.ACTIVE,
-        tenantStatusFilter: TenantStatusFilter = TenantStatusFilter.ANY
+    private fun loadPropertiesByFilters(
+        propertyStatusFilter: PropertyStatusFilter = propertiesViewModel.currentPropertyStatusFilter,
+        tenantStatusFilter: TenantStatusFilter = propertiesViewModel.currentTenantStatusFilter
     ) {
         Log.i(
             TAG,
@@ -133,6 +138,35 @@ class PropertiesFragment : Fragment(), PropertiesAdapter.PropertiesAdapterListen
         } else {
             binding.emptyList.visibility = View.GONE
             binding.list.visibility = View.VISIBLE
+        }
+    }
+
+    private fun setupPropertyFilterDropdown() {
+        val filters = resources.getStringArray(R.array.properties_filters)
+        val adapter =
+            ArrayAdapter(requireContext(), R.layout.filter_dropdown_list_item, filters)
+        (binding.toolbarFilters.propertiesDropdownEt as? AutoCompleteTextView)?.let {
+            it.setAdapter(adapter)
+            it.setOnItemClickListener { _, _, i, _ ->
+                val filter =
+                    PropertyStatusFilter.valueOf(resources.getStringArray(R.array.properties_filters)[i].uppercase())
+
+                loadPropertiesByFilters(propertyStatusFilter = filter)
+            }
+        }
+    }
+
+    private fun setupTenantFilterDropdown() {
+        val filters = resources.getStringArray(R.array.tenant_filters)
+        val adapter = ArrayAdapter(requireContext(), R.layout.filter_dropdown_list_item, filters)
+        (binding.toolbarFilters.tenantsDropdownEt as? AutoCompleteTextView)?.let {
+            it.setAdapter(adapter)
+            it.setOnItemClickListener { _, _, i, _ ->
+                val filter =
+                    TenantStatusFilter.valueOf(resources.getStringArray(R.array.tenant_filters)[i].uppercase())
+
+                loadPropertiesByFilters(tenantStatusFilter = filter)
+            }
         }
     }
 }
