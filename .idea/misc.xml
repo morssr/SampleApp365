@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/drawable/ic_baseline_supervisor_account_24.xml" value="0.1765625" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/drawable/ic_key_lock_ic.xml" value="0.1765625" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/drawable/ic_suit_ic.xml" value="0.1765625" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/activity_main.xml" value="0.3353846153846154" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/filter_dropdown_list_item.xml" value="0.16041666666666668" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/filters_dropdown.xml" value="0.22" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/fragment_properties.xml" value="0.22" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/fragment_properties_list.xml" value="0.3546875" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/load_state_footer_view_item.xml" value="0.15364583333333334" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/owner_content.xml" value="0.16041666666666668" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/property_and_tenant_list_item.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/property_content.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/property_list_item.xml" value="0.33" />
-        <entry key="..\:/Users/User/MyAndroidProjects/Samples/MySamples/SampleApp365/app/src/main/res/layout/tenant_item_list.xml" value="0.25" />
-      </map>
-    </option>
-  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
