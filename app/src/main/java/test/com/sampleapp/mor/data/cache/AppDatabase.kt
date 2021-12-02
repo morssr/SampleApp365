@@ -14,6 +14,8 @@ import test.com.sampleapp.mor.data.cache.paging.RemoteKeysDao
 import test.com.sampleapp.mor.data.cache.utilities.converters.DateTypeConverter
 import test.com.sampleapp.mor.data.cache.utilities.converters.EntitiesConverters
 
+const val FLAG_USE_IN_MEMORY_DB = false
+
 @TypeConverters(DateTypeConverter::class, EntitiesConverters::class)
 @Database(
     entities = [Property::class, Tenant::class, RemoteKeys::class],
@@ -34,13 +36,13 @@ abstract class AppDatabase : RoomDatabase() {
         @Volatile
         private var instance: AppDatabase? = null
 
-        fun getInstance(context: Context, useInMemory: Boolean = false): AppDatabase {
+        fun getInstance(context: Context, useInMemory: Boolean = FLAG_USE_IN_MEMORY_DB): AppDatabase {
             return instance ?: synchronized(this) {
                 instance ?: buildDatabase(context, useInMemory).also { instance = it }
             }
         }
 
-        private fun buildDatabase(context: Context, useInMemory: Boolean = false): AppDatabase {
+        private fun buildDatabase(context: Context, useInMemory: Boolean): AppDatabase {
             val databaseBuilder =
                 if (useInMemory) Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java)
                     .addCallback(

@@ -10,6 +10,7 @@ import test.com.sampleapp.mor.data.PropertiesRepository
 import test.com.sampleapp.mor.data.Repository
 import test.com.sampleapp.mor.data.api.PropertiesService
 import test.com.sampleapp.mor.data.cache.AppDatabase
+import test.com.sampleapp.mor.data.cache.FLAG_USE_IN_MEMORY_DB
 import test.com.sampleapp.mor.data.cache.PropertiesDao
 import test.com.sampleapp.mor.data.cache.TenantsDao
 import javax.inject.Qualifier
@@ -49,7 +50,7 @@ object DatabaseModule {
     @Provides
     @Singleton
     @DatabaseUseInMemoryFlag
-    fun provideUseInMemoryFlag(): Boolean = false
+    fun provideUseInMemoryFlag(): Boolean = FLAG_USE_IN_MEMORY_DB
 }
 
 @Qualifier
