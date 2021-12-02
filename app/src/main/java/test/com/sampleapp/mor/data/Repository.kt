@@ -8,6 +8,7 @@ import androidx.paging.PagingData
 import androidx.sqlite.db.SimpleSQLiteQuery
 import kotlinx.coroutines.flow.Flow
 import test.com.sampleapp.mor.data.api.PropertiesService
+import test.com.sampleapp.mor.data.api.utils.PAGING_PAGE_SIZE
 import test.com.sampleapp.mor.data.cache.AppDatabase
 import test.com.sampleapp.mor.data.cache.paging.PropertiesRemoteMediator
 import test.com.sampleapp.mor.data.cache.relations.PropertyAndTenant
@@ -58,7 +59,7 @@ class Repository @Inject constructor(
 
         @OptIn(ExperimentalPagingApi::class)
         return Pager(
-            config = PagingConfig(pageSize = 12, enablePlaceholders = false),
+            config = PagingConfig(pageSize = PAGING_PAGE_SIZE, enablePlaceholders = false),
             remoteMediator = PropertiesRemoteMediator(
                 propertiesService,
                 appDatabase,
