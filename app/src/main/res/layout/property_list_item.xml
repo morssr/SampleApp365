@@ -24,8 +24,7 @@
         android:layout_marginVertical="@dimen/grid_0_5"
         android:onClick="@{(view) -> listener.onPropertyClick(property)}"
         android:padding="4dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="2dp">
+        app:cardCornerRadius="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -110,6 +109,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/owner_card"
+                style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -137,6 +137,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/tenant_card"
+                style="@style/Widget.Material3.CardView.Filled"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -144,7 +145,6 @@
                 android:onClick="@{(view) -> listener.onTenantClick(property)}"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
-                app:cardBackgroundColor="@color/blue_50_alpha_060"
                 app:cardElevation="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

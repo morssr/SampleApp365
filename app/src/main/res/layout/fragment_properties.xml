@@ -19,34 +19,23 @@
             android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:fitsSystemWindows="true">
+            android:fitsSystemWindows="true"
+            app:liftOnScroll="true">
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:id="@+id/collapsing_toolbar"
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fitsSystemWindows="true"
-                app:expandedTitleGravity="center"
-                app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
-                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
-                app:titleEnabled="false">
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways|snap">
 
-                <com.google.android.material.appbar.MaterialToolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    app:contentInsetStart="0dp"
-                    app:layout_collapseMode="pin"
-                    app:layout_scrollFlags="scroll|enterAlways">
+                <include
+                    android:id="@+id/toolbar_filters"
+                    layout="@layout/filters_dropdown" />
 
-                    <include
-                        android:id="@+id/toolbar_filters"
-                        layout="@layout/filters_dropdown" />
-                </com.google.android.material.appbar.MaterialToolbar>
-
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.MaterialToolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 

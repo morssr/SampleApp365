@@ -1,24 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
-    <color name="blue_50">#eef0f2</color>
-
-    <color name="white_50_alpha_060">#99ffffff</color>
-    <color name="blue_50_alpha_060">#99eef0f2</color>
-
-    <color name="black_900_alpha_020">#33000000</color>
-    <color name="black_900_alpha_087">#de000000</color>
-    <color name="black_900_alpha_060">#99000000</color>
+    <color name="md_theme_light_primary">#0061A5</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#CFE4FF</color>
+    <color name="md_theme_light_onPrimaryContainer">#001D36</color>
+    <color name="md_theme_light_secondary">#535F70</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#D6E3F7</color>
+    <color name="md_theme_light_onSecondaryContainer">#101C2B</color>
+    <color name="md_theme_light_tertiary">#6B5778</color>
+    <color name="md_theme_light_onTertiary">#FFFFFF</color>
+    <color name="md_theme_light_tertiaryContainer">#F3DAFF</color>
+    <color name="md_theme_light_onTertiaryContainer">#251432</color>
+    <color name="md_theme_light_error">#BA1B1B</color>
+    <color name="md_theme_light_errorContainer">#FFDAD4</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+    <color name="md_theme_light_onErrorContainer">#410001</color>
+    <color name="md_theme_light_background">#FDFCFF</color>
+    <color name="md_theme_light_onBackground">#1B1B1B</color>
+    <color name="md_theme_light_surface">#FDFCFF</color>
+    <color name="md_theme_light_onSurface">#1B1B1B</color>
+    <color name="md_theme_light_surfaceVariant">#DFE3EC</color>
+    <color name="md_theme_light_onSurfaceVariant">#42474E</color>
+    <color name="md_theme_light_outline">#73777F</color>
+    <color name="md_theme_light_inverseOnSurface">#F1F0F4</color>
+    <color name="md_theme_light_inverseSurface">#2F3033</color>
+    <color name="md_theme_light_primaryInverse">#9CCAFF</color>
+    <color name="md_theme_dark_primary">#9CCAFF</color>
+    <color name="md_theme_dark_onPrimary">#00325A</color>
+    <color name="md_theme_dark_primaryContainer">#00497F</color>
+    <color name="md_theme_dark_onPrimaryContainer">#CFE4FF</color>
+    <color name="md_theme_dark_secondary">#BBC8DB</color>
+    <color name="md_theme_dark_onSecondary">#253140</color>
+    <color name="md_theme_dark_secondaryContainer">#3C4858</color>
+    <color name="md_theme_dark_onSecondaryContainer">#D6E3F7</color>
+    <color name="md_theme_dark_tertiary">#D6BEE4</color>
+    <color name="md_theme_dark_onTertiary">#3B2948</color>
+    <color name="md_theme_dark_tertiaryContainer">#523F5F</color>
+    <color name="md_theme_dark_onTertiaryContainer">#F3DAFF</color>
+    <color name="md_theme_dark_error">#FFB4A9</color>
+    <color name="md_theme_dark_errorContainer">#930006</color>
+    <color name="md_theme_dark_onError">#680003</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD4</color>
+    <color name="md_theme_dark_background">#1B1B1B</color>
+    <color name="md_theme_dark_onBackground">#E2E2E6</color>
+    <color name="md_theme_dark_surface">#1B1B1B</color>
+    <color name="md_theme_dark_onSurface">#E2E2E6</color>
+    <color name="md_theme_dark_surfaceVariant">#42474E</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C3C7D0</color>
+    <color name="md_theme_dark_outline">#8D9199</color>
+    <color name="md_theme_dark_inverseOnSurface">#1B1B1B</color>
+    <color name="md_theme_dark_inverseSurface">#E2E2E6</color>
+    <color name="md_theme_dark_primaryInverse">#0061A5</color>
+    <color name="seed">#4D9BE8</color>
+    <color name="error">#BA1B1B</color>
 
     <color name="active_occupied">#08BE22</color>
     <color name="vacant">#D52B1E</color>
     <color name="inactive">#353435</color>
+    <color name="black_900_alpha_087">#de000000</color>
 
 </resources>

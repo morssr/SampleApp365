@@ -15,7 +15,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/properties_filter_menu"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="?attr/textInputOutlinedExposedDropdownMenuStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -36,7 +36,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tenants_filter_menu"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="?attr/textInputOutlinedExposedDropdownMenuStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
