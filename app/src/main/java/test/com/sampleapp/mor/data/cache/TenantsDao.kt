@@ -14,7 +14,7 @@ interface TenantsDao {
     suspend fun insert(tenant: Tenant)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(Tenants: List<Tenant>)
+    suspend fun insertAll(tenants: List<Tenant>)
 
     @Query("DELETE FROM ${QueryHelper.TENANTS_TABLE_NAME}")
     suspend fun clearAll()
