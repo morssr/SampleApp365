@@ -8,7 +8,6 @@ import test.com.sampleapp.mor.data.api.resposes.PropertiesResponse
 import test.com.sampleapp.mor.data.api.resposes.PropertyResponse
 import test.com.sampleapp.mor.data.api.utils.NullToEmptyStringAdapter
 import test.com.sampleapp.mor.data.api.utils.mapToPropertiesAndTenants
-import test.com.sampleapp.mor.utilities.readAssetsFile
 import java.io.InputStreamReader
 
 object FakeApiDataFactory : PropertiesService {
@@ -37,7 +36,7 @@ object FakeApiDataFactory : PropertiesService {
         }
     }
 
-    fun getPropertiesJsonFile(fileName: String) : String{
+    fun getPropertiesJsonFile(fileName: String): String {
         val reader = InputStreamReader(this.javaClass.classLoader?.getResourceAsStream(fileName))
         val content = reader.readText()
         reader.close()
@@ -73,7 +72,8 @@ object FakeApiDataFactory : PropertiesService {
         .build().adapter(PropertiesResponse::class.java)
 
     override suspend fun getProperties(page: Int): Response<PropertiesResponse> =
-        Response.success(buildMoshiConverter().fromJson(propertiesJsonFilesMap!![page])
-    )
+        Response.success(
+            buildMoshiConverter().fromJson(propertiesJsonFilesMap!![page])
+        )
 }
 
