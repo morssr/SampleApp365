@@ -41,13 +41,13 @@ android {
     testOptions {
         unitTests.includeAndroidResources = true
     }
+    packagingOptions {
+        resources {
+            excludes += ['LICENSE.txt', 'META-INF/AL2.0', 'META-INF/LGPL2.1']
+        }
+    }
 
     //Cucumber requirements
-    packagingOptions {
-        exclude 'LICENSE.txt'
-        exclude 'META-INF/AL2.0'
-        exclude 'META-INF/LGPL2.1'
-    }
 }
 
 dependencies {
@@ -55,19 +55,19 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
 
     //UI
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.5.0-beta01'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.6.0-alpha02'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 
     //DB - Room
-    implementation "androidx.room:room-ktx:2.3.0"
-    annotationProcessor "androidx.room:room-compiler:2.3.0"
-    kapt "androidx.room:room-compiler:2.3.0"
+    implementation "androidx.room:room-ktx:2.4.2"
+    annotationProcessor "androidx.room:room-compiler:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
 //    implementation "androidx.room:room-ktx:2.3.0"
 
     //Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
 
     //DI - Hilt
     implementation "com.google.dagger:hilt-android:2.38.1"
@@ -82,6 +82,7 @@ dependencies {
 
     //Paging
     implementation "androidx.paging:paging-runtime-ktx:3.1.0"
+    implementation "androidx.room:room-paging:2.5.0-alpha01"
 
     //Mock Server
     implementation "com.squareup.okhttp3:mockwebserver:4.9.2"
@@ -101,7 +102,7 @@ dependencies {
     kaptTest 'com.google.dagger:hilt-android-compiler:2.38.1'
 
     //room
-    testImplementation "androidx.room:room-testing:2.3.0"
+    testImplementation "androidx.room:room-testing:2.4.2"
     testImplementation "androidx.paging:paging-common-ktx:3.1.0"
 
     //Instrument Android Test
@@ -114,7 +115,7 @@ dependencies {
     androidTestImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0'
 
     //room
-    androidTestImplementation "androidx.room:room-testing:2.3.0"
+    androidTestImplementation "androidx.room:room-testing:2.4.2"
 
     //hilt
     androidTestImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
